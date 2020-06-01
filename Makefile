@@ -9,6 +9,8 @@ docker-build-image: docker/Dockerfile
 
 bake:
 	git clone https://gitlab.com/nsnam/bake.git
+	mkdir -p bake/contrib
+	cp ns-3-leo.xml bake/contrib
 
 configure: docker-build-image bake
 	$(DOCKER_RUN) /bin/bash -c './bake.py configure -e ns-3-leo && ./bake.py check && ./bake.py download'

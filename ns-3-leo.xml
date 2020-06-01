@@ -1,0 +1,17 @@
+<configuration>
+  <modules>
+    <module name="ns-3-leo" type="ns">
+      <source type="git">
+        <attribute name="url" value="https://gitlab.com/dadada_/ns-3-dev.git"/>
+        <attribute name="module_directory" value="ns-3-leo"/>
+      </source>
+      <depends_on name="netanim-3.108" optional="True"/>
+      <depends_on name="pybindgen-0.20.0" optional="True"/>
+      <depends_on name="pyviz-gtk3-prerequisites" optional="True"/>
+      <build type="waf" objdir="yes">
+        <attribute name="configure_arguments" value="configure --prefix=$INSTALLDIR --enable-examples --enable-tests"/>
+      </build>
+    </module>
+  </modules>
+</configuration>
+
