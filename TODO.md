@@ -8,4 +8,4 @@
 2020-06-02
 ----------
 
-1. workpackages -> issues and milestones on GL or git-bug
+1. ✓ workpackages -> issues and milestones on GL or git-bug
