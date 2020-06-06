@@ -1,4 +1,4 @@
-.PHONY: configure build docker-build-image all build configure clean test
+.PHONY: configure build docker-build-image all build configure clean test compile_commands shell
 
 DOCKER_RUN=docker run -it --mount type=bind,source="$(PWD)"/bake,target=/usr/bake ns-3-leo
 
@@ -23,3 +23,9 @@ clean: docker-build-image
 
 test: docker-build-image
 	$(DOCKER_RUN) /bin/bash -c 'cd source/ns-3-leo/ && ./test.py'
+
+compile_commands: docker-build-image
+	$(DOCKER_RUN) /bin/bash -c "bear ./bake.py build"
+
+shell:
+	$(DOCKER_RUN) /bin/bash

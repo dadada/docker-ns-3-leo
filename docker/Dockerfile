@@ -7,6 +7,7 @@ RUN apt-get update
 
 # General dependencies
 RUN apt-get install -y \
+  bear \
   make \
   git \
   mercurial \
@@ -32,7 +33,8 @@ RUN apt-get install -y \
   libxml2-dev \
   vtun \
   unzip \
-  lxc
+  lxc \
+  clangd
 
 # QT components
 RUN apt-get install -y \
@@ -74,3 +76,9 @@ WORKDIR /usr/bake
 RUN apt-get clean && \
   rm -rf /var/lib/apt
 
+RUN useradd -ms /bin/bash user
+
+USER user
+
+ADD --chown=user:user ./.vimrc /home/user/.vimrc
+ADD --chown=user:user ./.vim /home/user/.vim

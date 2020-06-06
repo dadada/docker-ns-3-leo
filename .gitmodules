@@ -1,0 +1,3 @@
+[submodule "docker/.vim/pack/git-plugins/start/spacemacs-theme.vim"]
+	path = docker/.vim/pack/git-plugins/start/spacemacs-theme.vim
+	url = https://github.com/colepeters/spacemacs-theme.vim.git
